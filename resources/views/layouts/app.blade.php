@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit:400,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -26,38 +26,37 @@
         <li><a class="white-text titulo" href="">Contacto</a></li>
         <li><a class="white-text titulo" href="">Blog</a></li>
         @auth
-             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
+        <li>
+            <a class="dropdown-trigger white-text" href="#" data-target="dropdown">{{ Auth::user()->name }}</a>
+        </li>
         @endauth
-        
     </ul>
+
+
     <div class="rss hide-on-med-and-down">
         <a href=""><i class="fab fa-facebook-f white-text icons"></i></a>
         <a href=""><i class="fab fa-instagram white-text icons"></i></a>
     </div>
+
+    <ul id='dropdown' class='dropdown-content rojo'>
+        <li class="rojo"><a class="white-text " href="">Administración</a>
+        <li class="rojo">
+            <a class="white-text " href="#!" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
+    </ul>
 
     @yield('content')
 
 
     <!-- Scripts -->
     @yield('scripts')
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
     
 </body>
 </html>

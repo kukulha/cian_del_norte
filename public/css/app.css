@@ -408,6 +408,10 @@ footer {
   color: #d41116 !important;
 }
 
+.rojo:hover {
+  background: #d41116 !important;
+}
+
 .bold {
   font-weight: 700;
 }
