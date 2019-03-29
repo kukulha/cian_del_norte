@@ -1,0 +1,136 @@
+@import url('~normalize.css/normalize.css');
+//Generales
+*, *::after, *::before{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html{
+	font-family: 'Kanit', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+header, main, footer {
+      padding-left: 200px;
+    }
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+//Colores
+.navy{
+	background:#1b2342 !important;
+}
+.navy-text{
+	color: #1b2342 !important;
+}
+.celeste{
+	background:#0075bc !important;
+}
+.celeste-text{
+	color: #0075bc !important;
+}
+.azul{
+	background:#184998 !important;
+}
+.azul-text{
+	color: #184998 !important;
+}
+.rojo{
+	background:#d41116 !important;
+}
+.rojo-text{
+	color: #d41116 !important;
+}
+//Tipografias
+.bold{
+	font-weight: 700;
+}
+.italic{
+	font-weight: 700;
+	font-style: italic;
+}
+.small{
+	font-size: .8rem;
+}
+.title{
+	text-transform: uppercase;
+}
+.sombra-texto{
+	text-shadow: 1px 1px 10px #000;
+}
+.sombra{
+	box-shadow: 0 1px 10px #000;
+}
+//Fondos
+.hero{
+	background:url(/img/hero.jpg) no-repeat top left;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
+.fondo-1{
+	background:url(/img/fondo1.png) no-repeat top center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+}
+//Helpers
+.valign-wrapper{
+	height: auto;
+}
+.sidenav{
+	width: 200px !important;
+}
+.fijo{
+	position: absolute;
+	top: 2%;
+	left: 2%;
+}
+.rss{
+	position: fixed;
+	bottom: 2%;
+	left: 0;
+	z-index: 1200;
+}
+.rss .icons{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin: 0 0px 0 5px;
+	padding: 10px;
+}
+.divider{
+	border: none;
+	padding: 3px;
+}
+.mt1{
+		margin-top: 25px;
+	}
+//medias
+@media screen and (min-width: 600px) {
+	.hero{
+		background:url(/img/hero.jpg) no-repeat top left;
+		background-size: cover;
+		background-attachment: cover;
+		height: 100vh;
+		width: 100%;
+	}
+	.valign-wrapper{
+	height: 100vh;
+	}
+	.poligono-top {
+  		position: absolute;
+  		bottom: 0;
+  		width: 100%;
+  		height: 10vw;
+  		/* set height to pixels if you want angle to change with screen width */
+	}
+}
