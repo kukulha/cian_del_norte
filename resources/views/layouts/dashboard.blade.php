@@ -11,26 +11,25 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit:400,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <a href="#" data-target="menu" class="sidenav-trigger menu hide-on-med-and-up fixed"><i class="material-icons rojo-text">menu</i></a>
-
-    <ul id="menu" class="sidenav sidenav-fixed navy z-depth-5">
+    <ul id="menu" class="sidenav sidenav-fixed rojo">
         <li>
             <div class="user-view">
                 <a href="{{ route('home') }}"><img class="responsive-img" src="/img/iso.png"></a>
             </div>
         </li>
-        <li><a class="white-text titulo" href="">Llantas</a></li>
-        <li><a class="white-text titulo" href="">Maquinaria   </a></li>
-        <li><a class="white-text titulo" href="">Contacto</a></li>
-        <li><a class="white-text titulo" href="{{ route('blog') }}">Blog</a></li>
-        @auth
-        <li>
-            <a class="dropdown-trigger white-text" href="#" data-target="dropdown">{{ Auth::user()->name }}</a>
+        <li><a class="white-text titulo" href="{{ route('home') }}">Ver Página</a></li>
+        <li><a class="white-text titulo" href="{{ route('posts.index') }}">Artículos</a></li>
+        <li><a class="white-text titulo" href="{{ route('categories.index') }}">Categorías</a></li>
+        <li class="white-text titulo">
+            <a class="white-text " href="#!" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </li>
-        @endauth
     </ul>
 
 
@@ -40,7 +39,7 @@
     </div>
 
     <ul id='dropdown' class='dropdown-content rojo'>
-        <li class="rojo"><a class="white-text " href="{{ route('posts.index') }}">Administración</a>
+        <li class="rojo"><a class="white-text " href="">Administración</a>
         <li class="rojo">
             <a class="white-text " href="#!" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

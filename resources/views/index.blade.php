@@ -5,7 +5,7 @@
     <div class="hero">
         <div class="valign-wrapper">
             <div class="container">
-                <div class="center">
+                <div class="center mt1">
                     <img src="/img/logo.png" class="responsive-img"  alt="">
                 </div>
                 <div class="right right-align">
@@ -54,17 +54,47 @@
     <section class="section">
         <div class="center">
             <h3 class="rojo-text italic">Últimas Noticias</h3>
-            <div class="row">
-                <div class="col m6 s12">
-                    <img src="/img/blog.jpg" class="responsive-img" alt="">
+            <div class="card horizontal hide-on-med-and-down">
+                <div class="card-image">
+                        <img src="{{ $post->file }}" class="responsive-img" alt="">
                 </div>
-                <div class="col m6 s12 left-align white">
-                    <h4 class="navy-text italic">Lorem Ipsum</h4>
-                    <p class="navy-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, ipsam! Incidunt libero aliquid eos quis quod sequi illum consectetur rerum et quas doloribus numquam nostrum, aliquam perferendis nesciunt quos, assumenda error sint ipsum, esse ex fugit dolorem temporibus. Explicabo illum hic maxime! Magni quo atque consequatur iusto aliquid sapiente, voluptas.</p><br>
-                    <p class="navy-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, ipsam! Incidunt libero aliquid eos quis quod sequi illum consectetur rerum et quas doloribus numquam nostrum, aliquam perferendis nesciunt quos, assumenda error sint ipsum, esse ex fugit dolorem temporibus. Explicabo illum hic maxime! Magni quo atque consequatur iusto aliquid sapiente, voluptas.</p>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <a href="{{ route('post', $post->slug) }}"><h4 class="navy-text italic">{{ $post->name }}</h4></a>
+                        <p class="azul-text flow-text">{{ $post->excerpt }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ route('post', $post->slug) }}" class="btn navy right">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card hide-on-med-and-up">
+                <div class="card-image">
+                        <img src="{{ $post->file }}" class="responsive-img" alt="">
+                </div>
+                <div class="card-content">
+                    <a href="{{ route('post', $post->slug) }}"><h4 class="navy-text italic">{{ $post->name }}</h4></a>
+                    <p class="azul-text">{{ $post->excerpt }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ route('post', $post->slug) }}" class="btn rojo ">Leer más</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="relative">
+        <div class="row container">
+            <div class="col m10 s12 fondo-1">
+                <h4 class="italic navy-text">La mejor maquinaria de <br>Construcción, Industrial y Minería</h4>
+                <a href="" class="btn rojo">Ver Catalogo</a>
+                <br><br><br>
+                <div class="col s12 offset-m4 mt-4">
+                    <img src="/img/maquinaria.png" class="responsive-img" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+        
 </main>
 @endsection

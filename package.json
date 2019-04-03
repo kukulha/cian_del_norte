@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "materialize-tags": "^1.2.3",
         "normalize.css": "^8.0.1"
     }
 }
