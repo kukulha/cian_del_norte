@@ -57,8 +57,8 @@
 				@foreach($categories as $category)
 					<p>
 						<label>
-							<input type="radio" name="category_id" id="category_id">
-							<span>{{ $category->name }}</span>
+							{{ Form::radio('category_id', $category->id ) }}
+							<span>{{ $category->name}}</span>
 						</label>
 					</p>
 				@endforeach
@@ -68,8 +68,8 @@
             @endif
 		</div>
 		<div class="input-field">
-			<label for="tags">Etiquetas(Palabras separadas por comas)</label>
-			<input type="text" name="tags" id="tags" data-role="materialtags">
+			{{ Form::label('tags', 'Etiquetas(Palabras separadas por comas)') }}
+			{{Form::text('tags', null, ['data-role' => 'materialtags'])}}
 		</div>
 	</div>
 </div>

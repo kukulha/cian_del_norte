@@ -3,22 +3,32 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostStoreRequest;
 use App\Http\Controllers\Controller;
-use App\Post;
+use App\Http\Requests\PostStoreRequest;
+use App\Http\Requests\PostUpdateRequest;
+use Illuminate\Support\Facades\Cache;
 use App\Category;
+use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $posts = Post::orderBy('id', 'DESC')->paginate(8);
-        return view('admin.posts.index', compact('posts'));
+    {   $key =  "posts.page." . request('page', 1);
+
+        $posts = Cache::rememberForever($key, function(){
+            return Post::with(['user'])->orderBy('id', 'DESC')->where('user_id', auth()->user()->id)->paginate(8);
+        });
+        return view('admin.posts.index', compact('posts'));   
     }
 
     /**
@@ -27,8 +37,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $categories = Category::orderBy('name', 'DESC')->get();
-        return view('admin.posts.create', compact('categories'));
+    {   
+        $categories = Category::orderBy('name' , 'ASC')->get();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -39,7 +50,19 @@ class PostController extends Controller
      */
     public function store(PostStoreRequest $request)
     {
-        dd($request->all());
+        $tags = explode(',', $request->tags);
+        $post = Post::create($request->all());
+        $post->tag($tags);
+        // Imagenes
+        if ($request->file('file')) {
+
+            $post->file = $request->file('file')->store('public');
+            $post->save();
+        }
+
+        $post->save();
+        Cache::flush();
+        return redirect()->route('posts.index')->with('info', 'Artículo creado correctamente');
     }
 
     /**
@@ -60,8 +83,14 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        return view('admin.posts.edit');
+    {   
+        $post = Cache::rememberForever("post.{$id}", function() use($id){
+            return Post::findOrFail($id);
+        });
+        //$this->authorize('pass', $post);
+        $categories = Category::orderBy('name' , 'ASC')->get();
+        return view('admin.posts.edit', compact('post', 'categories'));
+
     }
 
     /**
@@ -71,9 +100,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(PostUpdateRequest $request, $id)
+    {   
+        $post = Post::findOrFail($id);
+        //$this->authorize('pass', $post);
+        $tags = explode(',', $request->tags);
+        $post->fill($request->all())->save();
+        $post->tag($tags);
+        // Imagenes
+        if ($request->hasFile('file')) {
+            $post->file = $request->file('file')->store('public');
+            $post->save();
+        }
+        Cache::flush();
+        return redirect()->route('posts.index')->with('info', 'Articulo actualizado correctamente');
     }
 
     /**
@@ -84,6 +124,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        //$this->authorize('pass', $post);
+        $post->delete();
+        Cache::flush();
+        return redirect()->route('posts.index')->with('info', 'Artículo eliminado correctamente');
     }
 }

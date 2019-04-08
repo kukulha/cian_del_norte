@@ -17,8 +17,12 @@
 					<tr>
 						<td>{{ $post->name }}</td>
 						<td>{{ $post->excerpt }}</td>
-						<td><a href="" class="btn navy">Editar</a></td>
-						<td><a href="" class="btn rojo">Eliminar</a></td>
+						<td><a href="{{ route('posts.edit', $post->id) }}" class="btn navy">Editar</a></td>
+						<td>
+							{{ Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) }}
+								{{Form::submit('Eliminar', ['class' => 'btn rojo'])}}
+							{{ Form::close() }}
+						</td>
 					</tr>
 				@endforeach
 			</tbody>
