@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostStoreRequest;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -25,8 +27,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.posts.create');
+    {   $categories = Category::orderBy('name', 'DESC')->get();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -35,9 +37,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

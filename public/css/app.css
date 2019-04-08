@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -9,8 +11,10 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -51,9 +55,12 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -62,8 +69,10 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -83,10 +92,13 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+          text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -106,8 +118,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -163,10 +177,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -175,7 +193,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -185,7 +204,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -194,9 +214,9 @@ select { /* 1 */
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -205,9 +225,9 @@ button,
  */
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -217,9 +237,9 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -239,12 +259,18 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -268,18 +294,20 @@ textarea {
  * 2. Remove the padding in IE 10.
  */
 
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -288,16 +316,18 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -307,8 +337,10 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -348,6 +380,175 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * materialize-tags - A jQuery tags input plugin based on Materialize
+ * @version v1.2.1
+ * @link https://github.com/henrychavez/materialize-tags
+ * @license MIT
+ * @author Henry Chávez <henry19.chavez@gmail.com>
+ * @maintainer Jonathan Dekhtiar <contact@jonathandekhtiar.eu>
+ */
+
+.materialize-tags {
+  background: transparent;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 6px;
+  margin-bottom: 10px;
+  color: #444;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 100%;
+  line-height: 22px;
+  cursor: text;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+  .materialize-tags {
+    margin-top: 8px;
+  }
+}
+
+.materialize-tags.active {
+  box-shadow: 0 1px 0 0 #26a69a;
+  border-bottom-color: #26a69a;
+  outline: none;
+}
+
+.materialize-tags input[type],
+.materialize-tags textarea.materialize-textarea {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+  margin: 10px 0 0 0;
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-grow: 1;
+}
+
+.materialize-tags input::-moz-placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.materialize-tags input:-ms-input-placeholder {
+  color: #777;
+}
+
+.materialize-tags input::-webkit-input-placeholder {
+  color: #777;
+}
+
+.materialize-tags .tt-input:-moz-read-only {
+  color: rgba(0, 0, 0, 0.26) !important;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.26) !important;
+  box-shadow: none;
+}
+
+.materialize-tags .tt-input:read-only {
+  color: rgba(0, 0, 0, 0.26) !important;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.26) !important;
+  box-shadow: none;
+}
+
+.materialize-tags input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.materialize-tags .tt-hint {
+  position: relative !important;
+}
+
+.materialize-tags .tt-input {
+  position: absolute !important;
+  left: 0;
+  width: 100% !important;
+  border-bottom: 1px solid #BCBCBC;
+  box-shadow: 0 1px 0 0 #BCBCBC;
+}
+
+.materialize-tags .tt-menu {
+  min-width: 200px;
+  max-width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.materialize-tags .tt-menu .tt-suggestion {
+  line-height: 2rem !important;
+  padding: 5px 15px !important;
+}
+
+.materialize-tags .tt-menu .tt-cursor {
+  background: deepskyblue;
+  color: #000;
+  font-weight: inherit;
+}
+
+.materialize-tags .tt-menu .tt-cursor .tt-highlight {
+  color: #fff;
+  font-weight: inherit;
+}
+
+.tt-highlight {
+  color: #000;
+  font-weight: 800;
+  margin-top: -1px;
+}
+
+.input-field .prefix ~ .materialize-tags {
+  margin-left: 3rem;
+  width: calc(100% - 3rem);
+}
+
+.materialize-tags-max span input[type=text] {
+  pointer-events: none;
+  outline: none;
+  border: none;
+  box-shadow: 0;
+}
+
+.materialize-tags-max span input[type=text]:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0;
+}
+
+.materialize-tags-max {
+  border: none !important;
+  box-shadow: 0 1px 0 0 #d5d5d5 !important;
+  outline: none !important;
+}
+
+.chip {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.chip i.material-icons {
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 8px;
+}
+
+.twitter-typeahead {
+  flex-grow: 1;
+}
+
 *,
 *::after,
 *::before {
@@ -374,6 +575,11 @@ footer {
   footer {
     padding-left: 0;
   }
+}
+
+.ck-content {
+  min-height: 400px;
+  max-height: 400px;
 }
 
 .navy {

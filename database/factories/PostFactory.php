@@ -6,7 +6,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
 	$title = $faker->sentence(4);
     return [
         'user_id' => rand(1,30),
-        'category_id' => rand(1,20),
+        'category_id' => rand(1,10),
         'name' => $title,
         'slug' => str_slug($title),
         'excerpt' => $faker->realText(144),

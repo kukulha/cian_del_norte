@@ -1,4 +1,6 @@
-@import url('~normalize.css/normalize.css');
+// Normalize.css
+@import '~normalize.css/normalize';
+@import '~materialize-tags/dist/css/materialize-tags';
 //Generales
 *, *::after, *::before{
 	margin: 0;
@@ -21,6 +23,7 @@ header, main, footer {
         padding-left: 0;
     }
 }
+.ck-content { min-height:400px; max-height:400px; }
 //Colores
 .navy{
 	background:#1b2342 !important;
