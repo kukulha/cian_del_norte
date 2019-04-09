@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit:400,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -22,8 +23,8 @@
                 <a href="{{ route('home') }}"><img class="responsive-img" src="/img/iso.png"></a>
             </div>
         </li>
-        <li><a class="white-text titulo" href="">Llantas</a></li>
-        <li><a class="white-text titulo" href="">Maquinaria   </a></li>
+        <li><a class="white-text titulo" href="{{ route('tires') }}">Llantas</a></li>
+        <li><a class="white-text titulo" href="{{ route('machinery') }}">Maquinaria   </a></li>
         <li><a class="white-text titulo" href="">Contacto</a></li>
         <li><a class="white-text titulo" href="{{ route('blog') }}">Blog</a></li>
         @auth
@@ -56,6 +57,7 @@
     @yield('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     
     

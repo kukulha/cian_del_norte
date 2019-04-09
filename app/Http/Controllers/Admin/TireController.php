@@ -24,10 +24,7 @@ class TireController extends Controller
      */
     public function index()
     {
-        $key =  "machineries.page." . request('page', 1);
-        $tires = Cache::rememberForever($key, function(){
-            return Tire::orderBy('id', 'DESC')->paginate(8);
-        });
+        $tires = Tire::orderBy('id', 'DESC')->paginate(8);
         return view('admin.tires.index', compact('tires'));
     }
 

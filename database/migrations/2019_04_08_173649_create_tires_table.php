@@ -22,7 +22,7 @@ class CreateTiresTable extends Migration
             $table->string('brand', 128)->nullable();
             $table->string('file', 128)->nullable();
             $table->string('data', 128)->nullable();
-            $table->enum('category', ['CAMION', 'AGRICOLA'])->default('CAMION');
+            $table->enum('category', ['CAMION', 'AGRICOLA']);
             $table->timestamps();
         });
     }

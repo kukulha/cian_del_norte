@@ -81,8 +81,31 @@ header, main, footer {
 	width: 100%;
 	position: relative;
 }
+.hero2{
+	background:url(/img/hero2.jpg) no-repeat top right;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
+.hero3{
+	background:url(/img/hero3.jpg) no-repeat top center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
 .fondo-1{
 	background:url(/img/fondo1.png) no-repeat top center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+}
+.fondo-2{
+	background:url(/img/fondo2.png) no-repeat top center;
 	background-size: cover;
 	background-attachment: cover;
 	height: auto;

@@ -24,10 +24,7 @@ class MachineryController extends Controller
      */
     public function index()
     {   
-        $key =  "machineries.page." . request('page', 1);
-        $machineries = Cache::rememberForever($key, function(){
-            return Machinery::orderBy('id', 'DESC')->paginate(8);
-        });
+        $machineries = Machinery::orderBy('id', 'DESC')->paginate(8);
         return view('admin.machineries.index', compact('machineries'));
     }
 

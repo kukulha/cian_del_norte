@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 use App\Post;
+use App\Tire;
+use App\Machinery;
 
 class PagesController extends Controller
 {
@@ -37,5 +39,19 @@ class PagesController extends Controller
             ->where('id', '!=', $post->id)
             ->paginate(3);
         return view('web.post', compact('post', 'related'));
+    }
+
+    public function tires()
+    {
+        
+        $camiones = Tire::orderBy('name', 'DESC')->where('category', 'CAMION')->paginate();
+        $agricolas = Tire::orderBy('name', 'DESC')->where('category','AGRICOLA')->paginate();
+        return view('web.tires', compact('camiones', 'agricolas'));
+    }
+
+    public function machinery()
+    {
+        $machineries = Machinery::orderBy('name', 'DESC')->paginate();
+        return view('web.machineries', compact('machineries'));
     }
 }
