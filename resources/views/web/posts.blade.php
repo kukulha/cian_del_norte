@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<main>
+<main class="section">
 	<section class="container center section">
 		<img src="/img/logo-2.png" class="responsive-img" width="450px" alt="">
 		<h3 class="navy-text titulo">Lista de Blogs</h3>

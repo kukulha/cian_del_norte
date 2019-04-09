@@ -4,4 +4,7 @@ $(document).ready(function(){
 	$('.dropdown-trigger').dropdown({
 		coverTrigger:false,
 	});
+	 $('select').formSelect({
+	 	coverTrigger:false,
+	 });
  });

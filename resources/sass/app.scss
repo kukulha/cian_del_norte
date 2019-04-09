@@ -97,6 +97,14 @@ header, main, footer {
 	width: 100%;
 	position: relative;
 }
+.hero4{
+	background:url(/img/hero4.jpg) no-repeat top center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100%;
+	position: relative;
+}
 .fondo-1{
 	background:url(/img/fondo1.png) no-repeat top center;
 	background-size: cover;
@@ -148,6 +156,9 @@ header, main, footer {
 	top:5px;
 	left: 5px;
 	z-index: 2000;
+}
+.overflow{
+	overflow-y:hidden;
 }
 //medias
 @media screen and (min-width: 600px) {

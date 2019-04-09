@@ -25,7 +25,7 @@
         </li>
         <li><a class="white-text titulo" href="{{ route('tires') }}">Llantas</a></li>
         <li><a class="white-text titulo" href="{{ route('machinery') }}">Maquinaria   </a></li>
-        <li><a class="white-text titulo" href="">Contacto</a></li>
+        <li><a class="white-text titulo" href="{{ route('messages.create') }}">Contacto</a></li>
         <li><a class="white-text titulo" href="{{ route('blog') }}">Blog</a></li>
         @auth
         <li>
@@ -52,7 +52,15 @@
 
     @yield('content')
 
+    <footer class="navy page-footer overflow">
+        <div class="row container">
+            <div class="col m6 s12 center offset-m3">
+                <img src="/img/logo.png" class="responsive-img" width="150px" alt="">
+                <p class="white-text small">Monterrey, Nuevo León</p>
+            </div>
 
+        </div>
+    </footer>
     <!-- Scripts -->
     @yield('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

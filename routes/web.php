@@ -19,8 +19,8 @@ Route::get('/maquinaria', 'Web\PagesController@machinery')->name('machinery');
 Route::get('/articulos', 'Web\PagesController@posts')->name('blog');
 Route::get('/articulos/{slug}', 'Web\PagesController@post')->name('post');
 //ADMIN
-Route::get('admin', 'Web\PagesController@admin')->name('admin');
 Route::resource('posts', 'Admin\PostController');
 Route::resource('categories', 'Admin\CategoryController');
 Route::resource('tires', 'Admin\TireController');
 Route::resource('machineries', 'Admin\MachineryController');
+Route::resource('messages', 'Admin\MessageController');

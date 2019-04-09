@@ -14,7 +14,7 @@ class CreateTiresTable extends Migration
     public function up()
     {
         Schema::create('tires', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
 
             $table->string('name', 128);
             $table->string('slug', 128)->unique();

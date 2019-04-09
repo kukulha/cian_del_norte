@@ -54,4 +54,5 @@ class PagesController extends Controller
         $machineries = Machinery::orderBy('name', 'DESC')->paginate();
         return view('web.machineries', compact('machineries'));
     }
+
 }
