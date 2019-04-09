@@ -26,6 +26,7 @@
         <li><a class="white-text titulo" href="{{ route('posts.index') }}">Artículos</a></li>
         <li><a class="white-text titulo" href="{{ route('categories.index') }}">Categorías</a></li>
         <li><a class="white-text titulo" href="{{ route('tires.index') }}">Llantas</a></li>
+        <li><a class="white-text titulo" href="{{ route('machineries.index') }}">Maquinaria</a></li>
         <li class="divider"></li>
         <li class="white-text titulo">
             <a class="white-text " href="#!" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>

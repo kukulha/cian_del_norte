@@ -21,3 +21,4 @@ Route::get('admin', 'Web\PagesController@admin')->name('admin');
 Route::resource('posts', 'Admin\PostController');
 Route::resource('categories', 'Admin\CategoryController');
 Route::resource('tires', 'Admin\TireController');
+Route::resource('machineries', 'Admin\MachineryController');

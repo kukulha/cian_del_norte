@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\TireStoreRequest;
-use App\Http\Requests\TireUpdateRequest;
-use App\Tire;
+use App\Http\Requests\MachineryStoreRequest;
+use App\Http\Requests\MachineryUpdateRequest;
+use App\Machinery;
 use Illuminate\Support\Facades\Cache;
 
-class TireController extends Controller
+class MachineryController extends Controller
 {
 
     public function __construct()
@@ -23,12 +23,12 @@ class TireController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $key =  "machineries.page." . request('page', 1);
-        $tires = Cache::rememberForever($key, function(){
-            return Tire::orderBy('id', 'DESC')->paginate(8);
+        $machineries = Cache::rememberForever($key, function(){
+            return Machinery::orderBy('id', 'DESC')->paginate(8);
         });
-        return view('admin.tires.index', compact('tires'));
+        return view('admin.machineries.index', compact('machineries'));
     }
 
     /**
@@ -38,7 +38,7 @@ class TireController extends Controller
      */
     public function create()
     {
-        return view('admin.tires.create');
+        return view('admin.machineries.create');
     }
 
     /**
@@ -47,32 +47,32 @@ class TireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TireStoreRequest $request)
+    public function store(MachineryStoreRequest $request)
     {
-        $tire = Tire::create($request->all());
+        $machinery = Machinery::create($request->all());
 
         // Imagenes
         if ($request->file('file')) {
 
-            $tire->file = $request->file('file')->store('public');
-            $tire->save();
+            $machinery->file = $request->file('file')->store('public');
+            $machinery->save();
         }
 
         if ($request->file('brand')) {
 
-            $tire->brand = $request->file('brand')->store('public');
-            $tire->save();
+            $machinery->brand = $request->file('brand')->store('public');
+            $machinery->save();
         }
 
         if ($request->file('data')) {
 
-            $tire->data = $request->file('data')->store('public');
-            $tire->save();
+            $machinery->data = $request->file('data')->store('public');
+            $machinery->save();
         }
         
-        $tire->save();
+        $machinery->save();
 
-        return redirect()->route('tires.index', $tire->id)->with('info', 'Articulo creado correctamente');
+        return redirect()->route('machineries.index', $machinery->id)->with('info', 'Articulo creado correctamente');
     }
 
 
@@ -84,8 +84,8 @@ class TireController extends Controller
      */
     public function edit($id)
     {
-        $tire = Tire::findOrFail($id);
-        return view('admin.tires.edit', compact('tire'));
+        $machinery = Machinery::findOrFail($id);
+        return view('admin.machineries.edit', compact('machinery'));
     }
 
     /**
@@ -95,31 +95,31 @@ class TireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TireUpdateRequest $request, $id)
+    public function update(MachineryUpdateRequest $request, $id)
     {
-        $tire = Tire::findOrFail($id);
-        $tire->fill($request->all())->save();
+        $machinery = Machinery::findOrFail($id);
+        $machinery->fill($request->all())->save();
 
         // Imagenes
         if ($request->file('file')) {
 
-            $tire->file = $request->file('file')->store('public');
-            $tire->save();
+            $machinery->file = $request->file('file')->store('public');
+            $machinery->save();
         }
 
         if ($request->file('brand')) {
 
-            $tire->brand = $request->file('brand')->store('public');
-            $tire->save();
+            $machinery->brand = $request->file('brand')->store('public');
+            $machinery->save();
         }
 
         if ($request->file('data')) {
 
-            $tire->data = $request->file('data')->store('public');
-            $tire->save();
+            $machinery->data = $request->file('data')->store('public');
+            $machinery->save();
         }
 
-        return redirect()->route('tires.index', $tire->id)->with('info', 'Llanta actualizado correctamente');
+        return redirect()->route('machineries.index', $machinery->id)->with('info', 'Llanta actualizado correctamente');
     }
 
     /**
@@ -130,7 +130,7 @@ class TireController extends Controller
      */
     public function destroy($id)
     {
-        $tire = Tire::findOrFail($id)->delete();
+        $machinery = Machinery::findOrFail($id)->delete();
         return back()->with('info', 'Llanta eliminada correctamente');
     }
 }

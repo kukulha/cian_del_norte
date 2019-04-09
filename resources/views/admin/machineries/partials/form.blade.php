@@ -21,7 +21,7 @@
 
 		<div class="file-field field-input">
 			<div class="btn rojo">
-				<span>Llanta</span>
+				<span>Maquinaria</span>
 				{{ Form::file('file', null) }}	
 			</div>
 			<div class="file-path-wrapper">
@@ -64,25 +64,6 @@
 			@if ($errors->has('excerpt'))
                 <span class="helper-text rojo-text" data-error="wrong" data-success="right">{{ $errors->first('excerpt') }}</span>
             @endif
-		</div>
-
-		<div class="row">
-			<div class="col s12">
-				{{Form::label('category', 'Categoría')  }}
-				<br>
-				<p style="display: inline">
-					<label>
-						{{ Form::radio('category', 'CAMION') }}
-						<span>Camión</span>
-					</label>
-				</p>
-				<p style="display: inline">
-					<label>
-						{{ Form::radio('category', 'AGRICOLA') }}
-						<span>Agrícola</span>
-					</label>
-				</p>
-			</div>
 		</div>
 
 		<div class="input-field">
