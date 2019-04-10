@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 use App\Post;
 use App\Tire;
+use App\Type;
 use App\Machinery;
 
 class PagesController extends Controller
@@ -18,7 +19,8 @@ class PagesController extends Controller
         $post = Cache::remember($key, now()->addMinutes(10), function(){
             return Post::with(['user'])->orderBy('id', 'DESC')->first();
         });
-        return view('index', compact('post'));
+        $types = Type::orderBy('id', 'ASC')->paginate();
+        return view('index', compact('post', 'types'));
     }
     public function posts()
     {
@@ -43,16 +45,25 @@ class PagesController extends Controller
 
     public function tires()
     {
-        
+        $types = Type::orderBy('id', 'DESC')->paginate();
         $camiones = Tire::orderBy('name', 'DESC')->where('category', 'CAMION')->paginate();
         $agricolas = Tire::orderBy('name', 'DESC')->where('category','AGRICOLA')->paginate();
-        return view('web.tires', compact('camiones', 'agricolas'));
+        return view('web.tires', compact('camiones', 'agricolas', 'types'));
     }
 
     public function machinery()
     {
         $machineries = Machinery::orderBy('name', 'DESC')->paginate();
         return view('web.machineries', compact('machineries'));
+    }
+
+    public function types($slug)
+    {
+        $types = Type::orderBy('id', 'ASC')->paginate();
+        $type = Type::where('slug', $slug)->pluck('id')->first();
+        $camiones = Tire::where('type_id', $type)->orderBy('name', 'DESC')->where('category', 'CAMION')->paginate();
+        $agricolas = Tire::orderBy('name', 'DESC')->where('category','AGRICOLA')->paginate();
+        return view('web.tires', compact('camiones', 'agricolas', 'types'));
     }
 
 }

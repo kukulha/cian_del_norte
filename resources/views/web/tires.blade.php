@@ -7,19 +7,6 @@
             <div class="container">
                 <div class="center">
                 	<h2 class="white-text title">¿Qué tipo de llanta <br><span class="italic">estas buscando?</span></h2>
-                
-		            <div class="row">
-			            <div class="col m6 s12">
-			                <img src="/img/agricola.png" class="responsive-img" alt="">
-			                <br>
-			                <a href="" class="btn rojo title">Agrícola</a>
-			            </div>
-			            <div class="col m6 s12">
-			                <img src="/img/camion.png" class="responsive-img" alt="">
-			                <br>
-			                <a href="" class="btn rojo title">Camión</a>
-			            </div>
-		        	</div>
 		        </div>
             </div>
         </div>
@@ -39,8 +26,29 @@
 		<div class="divider rojo container"></div>
 		<br>
 		<div class="fondo-2">
-			<div class="container">
+			<div class="container section">
 				<div class="row">
+					<div class="row center">
+						@foreach($types as $type)
+							@if($type->name == 'N/A')
+
+							@else
+								<div class="col m3 s12">
+									<a href="{{ route('types', $type->slug) }}">
+										<img src="/img/tipo.png" class="responsive-img" alt="">
+										<p class="navy-text">{{ $type->name }}</p>
+									</a>
+								</div>
+							@endif
+						@endforeach
+						<div class="col m3 s12">
+							<a href="{{ route('tires') }}">
+								<img src="/img/tipo.png" class="responsive-img" alt="">
+								<p class="navy-text">Todas</p>
+							</a>
+						</div>
+					</div>
+					
 					@foreach($camiones as $camion)
 						<div class="col m4 s12">
 							<div class="card">

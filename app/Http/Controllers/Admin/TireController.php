@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TireStoreRequest;
 use App\Http\Requests\TireUpdateRequest;
 use App\Tire;
+use App\Type;
 use Illuminate\Support\Facades\Cache;
 
 class TireController extends Controller
@@ -34,8 +35,9 @@ class TireController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.tires.create');
+    {   
+        $types = Type::orderBy('id','DESC')->get();
+        return view('admin.tires.create', compact('types'));
     }
 
     /**

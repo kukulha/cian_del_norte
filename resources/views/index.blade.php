@@ -15,9 +15,9 @@
                 </div>
                  <div class="section center">
                     <div class="row">
-                        <div class="col m6 offset-m3 s12 rojo">
+                        <a href="{{ route('tires') }}" class="col m6 offset-m3 s12 rojo">
                             <h4 class="white-text">¿Qué <span class="italic sombra-texto">Tipo de Llanta</span> <br>estas buscando?</h4>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -37,18 +37,20 @@
 
     <section class="section grey lighten-2  center sombra">
         <h3 class="rojo-text">La llanta <span class="italic title">Perfecta</span><br><span class="right-align navy-text italic">Para tu trabajo</span></h3>
-        <div class="row">
-            <div class="col m6 s12">
-                <img src="/img/agricola.png" class="responsive-img" alt="">
-                <br>
-                <a href="" class="btn rojo title">Agricola</a>
-            </div>
-            <div class="col m6 s12">
-                <img src="/img/camion.png" class="responsive-img" alt="">
-                <br>
-                <a href="" class="btn rojo title">Camión</a>
-            </div>
-        </div>
+        <div class="row center">
+                        @foreach($types as $type)
+                            @if($type->name == 'N/A')
+
+                            @else
+                                <div class="col m4 s12">
+                                    <a href="{{ route('types', $type->slug) }}">
+                                        <img src="/img/tipo.png" class="responsive-img" alt="">
+                                        <p class="navy-text">{{ $type->name }}</p>
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
     </section>
 
     <section class="section">
@@ -87,7 +89,7 @@
         <div class="row container">
             <div class="col m10 s12 fondo-1">
                 <h4 class="italic navy-text">La mejor maquinaria de <br>Construcción, Industrial y Minería</h4>
-                <a href="" class="btn rojo">Ver Catalogo</a>
+                <a href="{{ route('machinery') }}" class="btn rojo">Ver Catalogo</a>
                 <br><br><br>
                 <div class="col s12 offset-m4 mt-4">
                     <img src="/img/maquinaria.png" class="responsive-img" alt="">

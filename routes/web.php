@@ -15,6 +15,7 @@ Auth::routes();
 //WEB
 Route::get('/', 'Web\PagesController@index')->name('home');
 Route::get('/llantas', 'Web\PagesController@tires')->name('tires');
+Route::get('/tipo-de-llanta/{slug}', 'Web\PagesController@types')->name('types');
 Route::get('/maquinaria', 'Web\PagesController@machinery')->name('machinery');
 Route::get('/articulos', 'Web\PagesController@posts')->name('blog');
 Route::get('/articulos/{slug}', 'Web\PagesController@post')->name('post');

@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Tire extends Model
 {
     protected $fillable = [
-    	'name', 'slug', 'excerpt', 'brand', 'file', 'data', 'category'
+    	'name', 'slug', 'excerpt', 'brand', 'file', 'data', 'category', 'type_id'
     ];
+
+    public function type()
+    {
+    	return $this->belongsTo(Type::class);
+    }
 }

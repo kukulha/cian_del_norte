@@ -85,6 +85,21 @@
 			</div>
 		</div>
 
+		<div class="row">
+			<div class="col s12">
+				{{Form::label('type_id', 'Tipo de Llanta')  }}
+				<br>
+				@foreach($types as $type)
+				<p style="display: inline">
+					<label>
+						{{ Form::radio('type_id', $type->id) }}
+						<span>{{ $type->name }}</span>
+					</label>
+				</p>
+				@endforeach
+			</div>
+		</div>
+
 		<div class="input-field">
 			<input type="submit" value="Guardar" class="btn rojo">
 		</div>

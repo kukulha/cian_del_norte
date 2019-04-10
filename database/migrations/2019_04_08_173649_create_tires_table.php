@@ -15,7 +15,7 @@ class CreateTiresTable extends Migration
     {
         Schema::create('tires', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->integer('type_id')->unsigned();
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
             $table->string('excerpt')->nullable();
@@ -23,7 +23,9 @@ class CreateTiresTable extends Migration
             $table->string('file', 128)->nullable();
             $table->string('data', 128)->nullable();
             $table->enum('category', ['CAMION', 'AGRICOLA']);
+
             $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('types')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

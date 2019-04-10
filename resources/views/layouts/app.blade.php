@@ -17,7 +17,7 @@
 <body>
     <a href="#" data-target="menu" class="sidenav-trigger menu hide-on-med-and-up fixed"><i class="material-icons rojo-text">menu</i></a>
 
-    <ul id="menu" class="sidenav sidenav-fixed navy z-depth-5">
+    <ul id="menu" class="sidenav sidenav-fixed celeste z-depth-5">
         <li>
             <div class="user-view">
                 <a href="{{ route('home') }}"><img class="responsive-img" src="/img/iso.png"></a>
@@ -52,7 +52,7 @@
 
     @yield('content')
 
-    <footer class="navy page-footer overflow">
+    <footer class="celeste page-footer overflow">
         <div class="row container">
             <div class="col m6 s12 center offset-m3">
                 <img src="/img/logo.png" class="responsive-img" width="150px" alt="">
