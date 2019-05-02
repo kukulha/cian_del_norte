@@ -19,7 +19,7 @@
 <main>
 	<section class="section container center">
 		<h2 class="rojo-text bold">Mensaje</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dolorum consequuntur ut minima nam voluptate corporis voluptatem, laborum, rem, error earum similique repudiandae impedit consequatur qui debitis rerum maxime quis porro omnis commodi iure architecto amet facere aut! Soluta explicabo consectetur ipsum, voluptates culpa sit. Quidem excepturi id a, accusantium autem vitae doloremque, pariatur suscipit sapiente totam, magni laborum. Soluta voluptate praesentium quo voluptatem commodi nostrum neque impedit hic! Illo aliquam veniam, quam, sunt rem modi aspernatur vero eum accusantium nam explicabo, maiores consectetur expedita est. Earum expedita, necessitatibus quod magnam asperiores incidunt. Dolores iusto, perferendis libero suscipit quam amet nihil voluptatum reprehenderit excepturi beatae ratione omnis molestias odit error quia odio hic numquam inventore illo eveniet eos maiores ea? Velit animi hic assumenda neque commodi tempore cupiditate nemo aliquam, iure eligendi nobis facere. Quam expedita, possimus accusantium ut dolores fuga aliquam quis laboriosam.</p>
+		<p>En CIAN del Norte tenemos la llanta perfecta. Seguras, con mayor rendimiento y durabilidad y además bajo costo por kilometro. </p>
 	</section>
 	<section class="section">
 		<h2 class="navy-text italic center">Llantas de Camión</h2>
@@ -81,7 +81,7 @@
 						<div class="col m4 s12">
 							<div class="card">
 								<div class="card-image">
-									<a href="{{ Storage::url($agricola->data) }}" data-fancybox="camion" data-title="{{ $agricola->name }}" data-alt="{{ $agricola->name }}"><img src="{{ Storage::url($agricola->file) }}" alt=""></a>
+									<a href="{{ Storage::url($agricola->data) }}" data-fancybox="agricola" data-title="{{ $agricola->name }}" data-alt="{{ $agricola->name }}"><img src="{{ Storage::url($agricola->file) }}" alt=""></a>
 								</div>
 								<div class="card-content">
 									<div class="center">

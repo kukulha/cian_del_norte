@@ -21,7 +21,16 @@
 <main>
 	<section class="section container center">
 		<h2 class="rojo-text bold">Mensaje</h2>
-		<p class="section">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dolorum consequuntur ut minima nam voluptate corporis voluptatem, laborum, rem, error earum similique repudiandae impedit consequatur qui debitis rerum maxime quis porro omnis commodi iure architecto amet facere aut! Soluta explicabo consectetur ipsum, voluptates culpa sit. Quidem excepturi id a, accusantium autem vitae doloremque, pariatur suscipit sapiente totam, magni laborum. Soluta voluptate praesentium quo voluptatem commodi nostrum neque impedit hic! Illo aliquam veniam, quam, sunt rem modi aspernatur vero eum accusantium nam explicabo, maiores consectetur expedita est. Earum expedita, necessitatibus quod magnam asperiores incidunt. Dolores iusto, perferendis libero suscipit quam amet nihil voluptatum reprehenderit excepturi beatae ratione omnis molestias odit error quia odio hic numquam inventore illo eveniet eos maiores ea? Velit animi hic assumenda neque commodi tempore cupiditate nemo aliquam, iure eligendi nobis facere. Quam expedita, possimus accusantium ut dolores fuga aliquam quis laboriosam.</p>
+		<p class="section">La maquinaria pesada más eficiente la encontrarás en <span class="bold">CIAN del Norte</span>. <br>Contamos con una amplia experiencia en el sector de venta de este tipo de equipos. Manejamos los precios más competitivos, una atención personalizada, personal más capacitado y una cartera de clientes que nos respaldan.</p>
+		<ul >
+			<li>Retroexcavadoras</li>
+			<li>Tractores Agrícolas</li>
+			<li>Combinadas</li>
+			<li>Plantas de Luz</li>
+			<li>Montacargas</li>
+		</ul>
+		<br>
+		<p class="section">¡En <span class="bold">CIAN del Norte</span> estás en buenas manos! <br> Los mejores Equipos, Servicio de calidad y personalizado y precios competitivos</p>
 		<br>
 		<div class="row">
 			<div class="col m4 s12 center">
