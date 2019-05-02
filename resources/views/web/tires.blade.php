@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('subtitle')
+Llantas
+@endsection
+
+
 @section('content')
 <header>
     <div class="hero2">

@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('subtitle')
+Queremos saber de ti
+@endsection
+
+
 @section('content')
 <header>
     <div class="hero4">

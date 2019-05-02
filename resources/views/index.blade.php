@@ -1,5 +1,52 @@
 @extends('layouts.app')
 
+@section('subtitle')
+La llanta perfecta para tu trabajo
+@endsection
+
+@section('seo')
+
+    <meta name="keywords" content="">
+    <meta name="description" content="Somos una empresa dedicada a la venta de llantas y maquinaria para el trabajo. ">
+    <!--SEO Twitter -->    
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Cian del Norte">
+    <meta property="twitter:description" content="Somos una empresa dedicada a la venta de llantas y maquinaria para el trabajo. ">
+    <meta property="twitter:url" content="{{ Request::url()}}">
+    <meta property="twitter:image" content="http://www.ciandelnorte.com/favicon.ico">
+    <meta property="twitter:creator" content="@Kukulha">
+    
+
+    <!--SEO Facebook -->    
+    <meta property="og:title" content="Cian del Norte">
+    <meta property="og:description" content="Somos una empresa dedicada a la venta de llantas y maquinaria para el trabajo. ">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ Request::url()}}">
+    <meta property="og:image" content="http://ciandelnorte.com/favicon.ico">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
+
+    <!--Schema.org-->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "Cian del Norte",
+            "url": "http://www.ciandelnorte.com",
+            "image": "http://ciandelnorte.com/img/logo.png",
+            "description" : "Somos una empresa dedicada a la venta de llantas y maquinaria para el trabajo. ",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Monterrey",
+                "addressRegion": "NL",
+                "postalCode": "64680",
+                "streetAddress": "Constelaciones 163 Colonia Contry"
+            },
+            "telephone": "+52 18120294037"
+        }
+    </script> 
+@endsection
+
 @section('content')
 <header>
     <div class="hero">

@@ -1,5 +1,64 @@
 @extends('layouts.app')
 
+@section('subtitle')
+{{ $post->name }}
+@endsection
+
+@section('seo')
+
+	<meta name="keywords" content="@foreach($post->tags as $tag) {{ $tag->name }} @endforeach">
+    <meta name="description" content="{{$post->excerpt}}">
+    <!--SEO Twitter -->    
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="{{ $post->name }}">
+    <meta property="twitter:description" content="{{ $post->excerpt }}">
+    <meta property="twitter:url" content="{{ Request::url()}}">
+    <meta property="twitter:image" content="http://www.ciandelnorte.com/favicon.ico">
+    <meta property="twitter:creator" content="@Kukulha">
+    
+
+    <!--SEO Facebook -->    
+    <meta property="og:title" content="{{ $post->name }}">
+    <meta property="og:description" content="{{ $post->excerpt }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ Request::url()}}">
+    <meta property="og:image" content="http://ciandelnorte.com/favicon.ico">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
+
+    <!--Schema.org-->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Article",
+            "name": "{{ $post->name }}",
+            "headline": "{{ $post->name }}",
+            "url": "http://www.ciandelnorte.com/blog/{{ $post->slug }}",
+            "image": "http://ciandelnorte.com{{ Storage::url($post->file) }}",
+            "description" : "{{ $post->excerpt }}",
+            "keywords" : "@foreach($post->tags as $tag) {{ $tag->name }} @endforeach",
+            "author": {
+				"@type": "Person",
+				"name" : "{{ $post->user->name }}"
+        	},
+            "datePublished": "{{ $post->created_at->diffForHumans() }}",
+            "dateModified": "{{ $post->updated_at->diffForHumans() }}",
+            "publisher": {
+				"@type": "Organization",
+				"name" : "Cian del Norte",
+				"logo": {
+					"@type": "imageObject",
+					"url": "http://www.ciandelnorte.com/img/logo.png"
+				}
+        	},
+        	"mainEntityOfPage" : {
+				"@type": "WebPage",
+				"@id": "http://www.ciandelnorte.com"
+        	}
+        }
+    </script> 
+@endsection
+
 @section('content')
 <main>
 	<article class="section center">

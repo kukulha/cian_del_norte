@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('subtitle')
+Blog
+@endsection
+
+
 @section('content')
 <main class="section">
 	<section class="container center section">

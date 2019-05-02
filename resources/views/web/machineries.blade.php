@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('subtitle')
+Maquinaria
+@endsection
+
+
 @section('content')
 <header>
     <div class="hero3">
